@@ -27,7 +27,7 @@ public class UserServiceOracleImpl implements UserService {
 
 	@Override
 	public List<User> getUserList(int page) {
-		int offset = (page -1) * RECORDS_PER_PAGE;
+		int offset = (page - 1) * RECORDS_PER_PAGE;
 		int limit = page * RECORDS_PER_PAGE;
 		List<User> list = userDao.getUserList(offset, limit);
 		return list;
@@ -36,19 +36,16 @@ public class UserServiceOracleImpl implements UserService {
 	@Override
 	public void insertUser(User user) {
 		userDao.insertUser(user);
-		
 	}
 
 	@Override
 	public void updateUser(User user) {
-		// TODO Auto-generated method stub
-		
+		userDao.updateUser(user);
 	}
 
 	@Override
 	public void deleteUser(String uid) {
-		// TODO Auto-generated method stub
-		
+		userDao.deleteUser(uid);
 	}
 
 	@Override
